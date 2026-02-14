@@ -1,0 +1,5 @@
+# Ignore trained models
+model/
+fastapi_lab1_env/
+logs/
+__pycache__/
