@@ -1,12 +1,6 @@
-# Ignore virtual environment
 fastapi_lab1_env/
-
-# Ignore trained models
 model/
-
-# Ignore logs
 logs/
-
-# Ignore Python cache
 __pycache__/
 *.pyc
+.DS_Store
