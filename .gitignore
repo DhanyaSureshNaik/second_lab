@@ -1,5 +1,12 @@
+# Ignore virtual environment
+fastapi_lab1_env/
+
 # Ignore trained models
 model/
-fastapi_lab1_env/
+
+# Ignore logs
 logs/
+
+# Ignore Python cache
 __pycache__/
+*.pyc
