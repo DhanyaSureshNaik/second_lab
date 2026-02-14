@@ -11,6 +11,9 @@ app = FastAPI(title="Breast Cancer Classifier API")
 LOG_FILE = os.path.join(os.path.dirname(__file__), "../logs/predictions.log")
 os.makedirs(os.path.dirname(LOG_FILE), exist_ok=True)
 
+class CancerResponse(BaseModel):
+    response: int
+
 class CancerData(BaseModel):
     features: List[float] = Field(..., min_items=30, max_items=30)
 
@@ -21,7 +24,7 @@ async def predict(data: CancerData):
         # Log prediction
         with open(LOG_FILE, "a") as f:
             f.write(f"{datetime.datetime.now()} - {data.features} -> {result}\n")
-        return result
+        return CancerResponse(response=result)
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
